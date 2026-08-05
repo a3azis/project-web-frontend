@@ -108,7 +108,10 @@ export default function App() {
             {/* 3. BANTUAN */}
             <div className="bg-gradient-to-br from-blue-950/40 to-zinc-900 p-3 rounded-lg border border-blue-500/30 text-center">
               <p className="text-xs text-blue-300 font-medium">Bingung Pilihan Size?</p>
-              <button className="mt-2 text-xs w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition cursor-pointer">
+              <button 
+              href="https://www.instagram.com/oldagesecond/"
+              onClick={() => window.open('https://www.instagram.com/oldagesecond/', '_blank')}
+              className="mt-2 text-xs w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition cursor-pointer">
                 Chat Admin
               </button>
             </div>

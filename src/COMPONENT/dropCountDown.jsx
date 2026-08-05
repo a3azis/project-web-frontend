@@ -7,8 +7,18 @@ export default function DropCountDown({ targetDate }) {
     useEffect(() => {
         if (!targetDate) return;
 
+        const formattadDate = typeof targetDate === "string"
+            ? targetDate.replace(/-/g, '/').replace('T', ' ')
+            : targetDate;
+
         const calculateTime = () => {
-            const difference = new Date(targetDate).getTime() - Date.now();
+            const targetTime = new Date(formattadDate).getTime();
+
+            if (isNaN(targetTime)) {
+                return { day: 0, hours: 0, minutes: 0, second: 0 };
+            }
+
+            const difference = targetTime - Date.now();
 
             if (difference <= 0) {
                 setIsDropped(true);
